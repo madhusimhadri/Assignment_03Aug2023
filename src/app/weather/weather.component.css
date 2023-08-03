@@ -1,0 +1,90 @@
+
+
+.title {
+  text-align: center;
+  color: white;
+  font-size: 26px;
+  padding: 20px;
+  margin: 0 !important;
+}
+
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: skyblue;
+
+}
+
+
+.container input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid gainsboro;
+  border-radius: 5px 0 0 5px;
+}
+
+.container button {
+  padding: 8px 12px;
+  border: 1px solid blue;
+  background-color: blue;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.info {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: cadetblue;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.info h3 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.info p {
+  width: 50%;
+  margin: 0;
+  padding: 5px;
+}
+
+
+.error-class {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+
+  .container {
+    max-width: 90%;
+  }
+
+  .container input[type="text"],
+  .container button {
+    width: 100%;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+
+  .container h3,
+  .title {
+    font-size: 16px;
+  }
+}
+
+
+
