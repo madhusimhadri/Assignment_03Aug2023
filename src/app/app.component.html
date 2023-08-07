@@ -1,5 +1,5 @@
 
-<div class="app-background">
-  <app-weather></app-weather>
+<div class="app-background" [ngStyle]="{'background-image': 'url(' + fromChild + ')'}">
+  <app-weather (sendImage)="updateImage($event)" ></app-weather>
 </div>
 

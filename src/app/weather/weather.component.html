@@ -1,30 +1,60 @@
-
-<h2 class="title">Weather App</h2>
+<h2 class="title">
+  <span style="background-color: yellowgreen; padding: 15px; border-radius: 2px"
+    >Weather App</span
+  >
+</h2>
 
 <div class="container">
-
-<div>
-  <input type="text" placeholder="Enter city name" [(ngModel)] = "city" class="city-nput">
-  <button  type="submit" (click)="getWeather()" class="submit-button">Get Weather</button>
-</div>
-
-<div *ngIf="weather" class="info">
-  <div style=" display: flex; justify-content: end; width: 100%;">
-    <button type="submit" (click)="getWeather()">Refresh</button>
+  <div>
+    <input
+      type="text"
+      placeholder="Enter city name"
+      [(ngModel)]="city"
+      class="city-nput"
+      (keydown)="captureEnter($event)"
+    />
+    <button type="submit" (click)="getWeather()" class="submit-button">
+      Get Weather
+    </button>
   </div>
-    <h3>{{weather.name}}</h3>
-    <p>Temperature: {{weather.main.temp}} </p>
-    <p>Pressure: {{weather.main.pressure}} </p>
-    <p>Himidity: {{weather.main.humidity}} </p>
-    <p>Min_Temp: {{weather.main.temp_min}} </p>
-    <p>Max_Temp: {{weather.main.temp_max}} </p>
-    <p>Description: {{weather.weather[0].description}} </p>
 
+  <div *ngIf="weather" class="info">
+    <div style="display: flex; justify-content: end; width: 100%">
+      <button type="submit" (click)="getWeather()">Refresh</button>
+    </div>
+    <h3>{{ weather.name }}</h3>
+    <p>Temperature: {{ weather.main.temp - k | number : "1.2-2" }} &deg;C</p>
+    <p>Pressure: {{ weather.main.pressure }}</p>
+    <p>Himidity: {{ weather.main.humidity }}</p>
+    <p>Min_Temp: {{ weather.main.temp_min - k | number : "1.2-2" }}</p>
+    <p>Max_Temp: {{ weather.main.temp_max - k | number : "1.2-2" }}</p>
+    <p>Description: {{ weather.weather[0].description }}</p>
+  </div>
+
+  <div *ngIf="errorMsg" class="error-class">
+    {{ errorMsg }}
+  </div>
 </div>
 
-<div *ngIf="errorMsg" class="error-class">
-  {{errorMsg}}
-</div>
-</div>
+<!-- Background based on temperature -->
 
+<!-- <div [ngSwitch]="true">
+  <ng-container *ngSwitchCase="(weather.main.temp - k) < 15">
+  <div class="background-image-container cold ">
+    <img src="'/assets/temp1.jpg'" alt="image">
+    <h4>Quite Cold! Don't come out of the house</h4>
+  </div>
+</ng-container>
 
+<ng-container *ngSwitchCase="(weather.main.temp - k) >= 15 && weather.main.temp - k <= 30">
+  <div  class="background-image-container normal bg-weather" >
+    <h4>Safe Temperature</h4>
+  </div>
+</ng-container>
+
+<ng-container *ngSwitchDefault>
+  <div  class="background-image-container sunny bg-weather" >
+      <h4>Hot Temperature</h4>
+  </div>
+</ng-container>
+</div> -->
