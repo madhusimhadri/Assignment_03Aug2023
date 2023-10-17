@@ -65,4 +65,6 @@ export class WeatherComponent {
 
   //changes done
 
+
+  //Git Rebase practice
 }
