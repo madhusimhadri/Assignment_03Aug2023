@@ -60,4 +60,9 @@ export class WeatherComponent {
       this.getWeather();
     }
   }
+
+  //Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, earum. Dicta dolores molestias
+
+  //changes done
+
 }
