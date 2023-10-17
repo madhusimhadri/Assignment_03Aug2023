@@ -63,4 +63,6 @@ export class WeatherComponent {
 
   //Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, earum. Dicta dolores molestias
 
+  //changes done
+
 }
